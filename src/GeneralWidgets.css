@@ -1063,8 +1063,8 @@ select option {
     position: fixed;
     background-color: var(--DefaultBackgroundColor);
     border: 1px solid var(--DefaultWidgetsTextColor);
-    width: fit-content;
-    height: fit-content;
+    width: 0px;
+    height: 0px;
     color: white;
     padding: calc(0.5 * var(--TotalBorderRadius));
     border-radius: var(--TotalBorderRadius);
@@ -1075,6 +1075,48 @@ select option {
     top: 694px;
 }
 
+.Tips[data-isOpen='false'] {
+    width: 0px;
+    height: 0px;
+}
+
 .Tips[data-isOpen='true'] {
     opacity: 1;
+    width: fit-content;
+    height: fit-content;
+}
+
+.NavBar {
+    position: relative;
+    height: var(--size);
+    width: fit-content;
+    margin: calc(0.5 * var(--size));
+    box-shadow: 0 0px 10px #00000027;
+    background-color: var(--DefaultPaneColor);
+    border-radius: 50ch;
+    padding: 2px;
+    z-index: calc(4 + var(--BaseZIndex));
+}
+
+.NavBar .NavBtn {
+    display: inline-block;
+    height: var(--size);
+    line-height: var(--size);
+    padding-right: var(--size);
+    padding-left: var(--size);
+    user-select: none;
+    border-radius: 50ch;
+    transition-duration: var(--TotalLongAnimationDuration);
+}
+
+.NavBar .NavBtn.current {
+    background-color: var(--DefaultHighLightColor);
+}
+
+.NavBar .NavBtn.clickable {
+    cursor: pointer;
+}
+
+.NavBar .NavBtn.clickable:hover {
+    background-color: var(--DefaultWidgetsColor);
 }

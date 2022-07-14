@@ -128,3 +128,7 @@ body #Ld1 {
     --oColor: #66ccff5d;
     --sColor: #44aadd;
 }
+
+body #Nav1 {
+    --size: 32px;
+}

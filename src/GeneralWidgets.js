@@ -169,7 +169,6 @@ function ClickPage(PgnName, Sel) {
 function ShowTip(TipName, event) {
     var left = event.clientX;
     var top = event.clientY;
-    console.log(left, top);
     document.getElementById(TipName).style.left = left + 'px';
     document.getElementById(TipName).style.top = top + 'px';
     document.getElementById(TipName).setAttribute('data-isOpen', 'true');
@@ -177,4 +176,28 @@ function ShowTip(TipName, event) {
 
 function HideTip(TipName) {
     document.getElementById(TipName).setAttribute('data-isOpen', 'false');
+}
+
+function NavBar(NavName) {
+    var nav = document.getElementById(NavName);
+    var current = parseInt(nav.getAttribute('data-currentSel'));
+    var total = parseInt(nav.getAttribute('data-Total'));
+    current -= 1;
+    for (let i = 0; i < total; i++) {
+        const element = nav.getElementsByClassName('NavBtn')[i];
+        if (i == current) {
+            element.classList.add('current');
+            element.classList.remove('clickable');
+            element.removeAttribute('onclick');
+        } else {
+            element.classList.remove('current')
+            element.classList.add('clickable');
+            element.setAttribute('onclick', 'NavBtn(\'' + NavName + '\',' + i + ');');
+        }
+    }
+}
+
+function NavBtn(NavName, Sel) {
+    document.getElementById(NavName).setAttribute('data-currentSel', Sel + 1);
+    NavBar(NavName);
 }
