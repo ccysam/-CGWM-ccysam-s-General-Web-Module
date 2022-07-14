@@ -2,14 +2,14 @@
 
 What you see here is a Self-Make ~~powerful~~, extensible, and ~~feature-packed~~ frontend toolkit.So far so good, this library has made things include
 
-| Major Things              | Sub Things                                            | Is on working | Status                              |
-| ------------------------- | ----------------------------------------------------- | ------------- | ----------------------------------- |
-| **Base UI Widgets** | Basic interactive<br />Widgets(Btn, Dlg, Box, etc.)  | ✔            | 100% Completed                      |
-|                           | Basic input Widgets<br />(input, textArea, etc.)      | ✔            | 100% Completed                      |
-|                           | Page tool Widgets<br />(Accordion, pagination .etc)   | ✔            | 75% Completed<br />(Nav bar lasted) |
-|                           | User assistant Widgets<br />(Tips, Tag, Loader, etc.) | ✔            | 100% Complete                       |
-| **Layouts**         | Basic Solid Layouts<br />(Grid, table, etc.)          | ✔            | Almost Start                        |
-|                           | Response Layouts                                      | ❌            |                                     |
+| Major Things              | Sub Things                                            | Is on working | Status         |
+| ------------------------- | ----------------------------------------------------- | ------------- | -------------- |
+| **Base UI Widgets** | Basic interactive<br />Widgets(Btn, Dlg, Box, etc.)  | ✔            | 100% Completed |
+|                           | Basic input Widgets<br />(input, textArea, etc.)      | ✔            | 100% Completed |
+|                           | Page tool Widgets<br />(Accordion, pagination .etc)   | ✔            | 100% Completed |
+|                           | User assistant Widgets<br />(Tips, Tag, Loader, etc.) | ✔            | 100% Complete  |
+| **Layouts**         | Basic Solid Layouts<br />(Grid, table, etc.)          | ✔            | Almost Start   |
+|                           | Response Layouts                                      | ❌            |                |
 
 ## Features
 
@@ -54,18 +54,16 @@ Author's Weekly Todolist will show at the end of this document after Chinese int
 
 ---
 
-
-
 一个受到bootstrap启发自己开发的轻量级前端框架，基本能用状态，下面展示了目前的完成进度。
 
-| 主要分类          | Sub Things                                | Is on working | Status             |
-| ----------------- | ----------------------------------------- | ------------- | ------------------ |
-| **UI 组件** | 基础交互组件（按钮等）                    | ✔            | 全部完成           |
-|                   | 基础输入组件<br />（形同html的各种input） | ✔            | 全部完成           |
-|                   | 页面工具组件<br />（折叠面板，翻页器等）  | ✔            | 除了导航栏都已完成 |
-|                   | 用户指导组件<br />（提示，标签等）        | ✔            | 全部完成           |
-| **布局**    | 基本静态布局<br />（网格式，表式）        | ✔            | 刚刚开始           |
-|                   | 响应式布局                                | ❌            |                    |
+| 主要分类          | Sub Things                                | Is on working | Status   |
+| ----------------- | ----------------------------------------- | ------------- | -------- |
+| **UI 组件** | 基础交互组件（按钮等）                    | ✔            | 全部完成 |
+|                   | 基础输入组件<br />（形同html的各种input） | ✔            | 全部完成 |
+|                   | 页面工具组件<br />（折叠面板，翻页器等）  | ✔            | 全部完成 |
+|                   | 用户指导组件<br />（提示，标签等）        | ✔            | 全部完成 |
+| **布局**    | 基本静态布局<br />（网格式，表式）        | ✔            | 刚刚开始 |
+|                   | 响应式布局                                | ❌            |          |
 
 ## 一些特色（大概？
 
@@ -109,6 +107,6 @@ Author's Weekly Todolist will show at the end of this document after Chinese int
 # Weekly Todo List
 
 * [X] Git the first version of this library|第一个版本的提交
-* [ ] Finish the works of Base Widgets(Nav Bar)|完成基本组件中最后一个导航栏的制作
+* [X] Finish the works of Base Widgets(Nav Bar)|完成基本组件中最后一个导航栏的制作
 * [ ] Finish Solid Layouts|完成静态布局的设计及制作
 * [ ] Start & Try to do some works on Response Layouts|开始进行响应式布局的设计制作
