@@ -1,0 +1,130 @@
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body #Dialog1 {
+    display: none;
+}
+
+body #Dialog1 #Wnd1 {
+    width: 320px;
+    height: 240px;
+}
+
+body #input1 {
+    --h: 64px;
+    width: 512px;
+    height: var(--h);
+    font-size: calc(0.5 * var(--h));
+}
+
+body #richInput1 {
+    --h: 32px;
+    width: 768px;
+    height: var(--h);
+    font-size: calc(0.5 * var(--h));
+}
+
+body #richInput2 {
+    --h: 18px;
+    width: 96px;
+    height: var(--h);
+    font-size: calc(0.5 * var(--h));
+}
+
+body #inputArea1 {
+    width: 480px;
+    height: 160px;
+    --fSize: 16px;
+}
+
+body #Button1 {
+    --size: 32px;
+}
+
+body #Button2 {
+    --size: 48px;
+}
+
+body #check1 {
+    --size: 36px;
+}
+
+body #Radio1 {
+    --size: 36px;
+    --direction: row;
+}
+
+body #Radio2 {
+    --size: 24px;
+    --direction: column
+}
+
+body #Switch1 {
+    --size: 32px;
+}
+
+body #float1Btn {
+    --size: 28px;
+}
+
+body #float2Btn {
+    --size: 28px;
+}
+
+body #FloatBox1 {
+    width: 240px;
+    --height: 160px;
+}
+
+body #FloatBox2 {
+    width: 240px;
+    --height: 160px;
+}
+
+body #Accordion1 {
+    --width: 192px;
+    --fSize: 24px;
+}
+
+body #innerBtn1 {
+    --size: 18px;
+}
+
+body #Accordion2 {
+    --width: 192px;
+    --fSize: 24px;
+}
+
+body #Accordion3 {
+    --width: 192px;
+    --fSize: 24px;
+}
+
+body #Accordion4 {
+    --width: 192px;
+    --fSize: 16px;
+}
+
+body #table1 {
+    --size: 18px;
+    --width: 384px;
+}
+
+body #crumb1 {
+    --crumb-min-width: 48px;
+    --size: 16px;
+}
+
+body #pgn1 {
+    --size: 36px;
+}
+
+body #Ld1 {
+    --size: 192px;
+    --cSize: 48px;
+    --cColor: #66ccff;
+    --oColor: #66ccff5d;
+    --sColor: #44aadd;
+}

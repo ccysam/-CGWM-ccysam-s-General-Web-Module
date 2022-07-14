@@ -1,0 +1,1080 @@
+:root {
+    --DefaultWidgetsTextColor: #2e2e2e;
+    --DefaultWidgetsColor: #e5e7eb;
+    --DefaultPaneColor: #fefefe;
+    --DefaultBackgroundColor: #0000005e;
+    --DefaultHighLightColor: #66ccff;
+    --TotalBorderRadius: 16px;
+    --BaseZIndex: 2;
+    --TotalShortAnimationDuration: 100ms;
+    --TotalLongAnimationDuration: 400ms;
+    --DefaultTagSize: 16px;
+}
+
+@font-face {
+    font-family: Font4CheckMark;
+    src: url(HkSN.TTF);
+}
+
+.Dialog {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--DefaultBackgroundColor);
+    z-index: calc(6 + var(--BaseZIndex));
+    animation-duration: var(--TotalLongAnimationDuration);
+    backdrop-filter: blur(4px);
+}
+
+.Dialog .DialogWnd {
+    position: absolute;
+    background-color: var(--DefaultPaneColor);
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: var(--TotalBorderRadius);
+}
+
+.Dialog .DialogWnd .DlgCloseBtn {
+    font-size: 32px;
+    font-family: 'Courier New', Courier, monospace;
+    padding-right: 8px;
+    float: right;
+    user-select: none;
+    cursor: pointer;
+    color: var(--DefaultWidgetsTextColor);
+}
+
+.Dialog .DialogWnd .DlgCloseBtn:hover {
+    color: red;
+}
+
+.Dialog .DialogWnd .WndContents {
+    padding: var(--TotalBorderRadius);
+    height: 64px;
+}
+
+@keyframes showDialog {
+    from {
+        display: block;
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes hideDialog {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.inputBox {
+    --distance: 50ch;
+    background-color: var(--DefaultWidgetsColor);
+    border-radius: var(--distance);
+    position: relative;
+    z-index: var(--BaseZIndex);
+}
+
+.inputBox input {
+    border: none;
+    background: transparent;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 5%;
+    bottom: 0;
+    right: 5%;
+    font-size: 1em;
+    color: var(--DefaultWidgetsTextColor);
+}
+
+.inputBox input:focus {
+    outline: none;
+    background: transparent;
+    content: none;
+}
+
+.inputBox input::placeholder {
+    color: var(--DefaultBackgroundColor);
+}
+
+.RichInput {
+    --distance: 50ch;
+    background-color: var(--DefaultWidgetsColor);
+    border-radius: var(--distance);
+    position: relative;
+    z-index: var(--BaseZIndex);
+    transition-duration: var(--TotalShortAnimationDuration);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--DefaultWidgetsColor);
+    height: var(--h);
+}
+
+.RichInput:hover {
+    box-shadow: 0 0px 5px var(--DefaultHighLightColor);
+}
+
+.RichInput:focus-within {
+    border-color: var(--DefaultHighLightColor);
+}
+
+.RichInput input::placeholder {
+    color: var(--DefaultBackgroundColor);
+}
+
+.RichInput input {
+    border: none;
+    background: transparent;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 6%;
+    bottom: 0;
+    right: 10%;
+    font-size: 1em;
+    color: var(--DefaultWidgetsTextColor);
+}
+
+.RichInput input:focus {
+    outline: none;
+    background: transparent;
+    content: none;
+}
+
+.RichInput img {
+    position: absolute;
+    width: calc(0.75 * var(--h));
+    height: auto;
+    top: 0;
+    bottom: 0;
+    left: 1%;
+    margin: auto;
+    user-select: none;
+}
+
+.RichInput .ClearBtn {
+    background: url(ClearHover@48px.png);
+    background-repeat: no-repeat;
+    background-size: calc(0.75 * var(--h));
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 1%;
+    margin: auto;
+    width: calc(0.75 * var(--h));
+    height: calc(0.75 * var(--h));
+    user-select: none;
+    cursor: pointer;
+    display: none;
+}
+
+.RichInput .ClearBtn:hover {
+    background: url(Clear@48px.png);
+    background-size: calc(0.75 * var(--h));
+}
+
+.InputArea {
+    position: relative;
+    z-index: calc(1 + var(--BaseZIndex));
+    background-color: var(--DefaultPaneColor);
+    border-radius: var(--TotalBorderRadius);
+    transition-duration: var(--TotalShortAnimationDuration);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--DefaultWidgetsColor);
+    box-shadow: 0 2px 10px rgb(0 0 0 / 5%);
+    padding: calc(0.25 * var(--fSize));
+}
+
+.InputArea:hover {
+    box-shadow: 0 0px 5px var(--DefaultHighLightColor);
+}
+
+.InputArea:focus-within {
+    border-color: var(--DefaultHighLightColor);
+}
+
+.InputArea textarea {
+    font-size: var(--fSize);
+    font-family: '等线';
+    resize: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.InputArea textarea:focus {
+    outline: none;
+    background: transparent;
+    content: none;
+}
+
+.InputArea textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+.InputArea textarea::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: var(--DefaultWidgetsColor);
+    user-select: none;
+    cursor: pointer;
+}
+
+.InputArea textarea::-webkit-scrollbar-thumb:hover {
+    background-color: var(--DefaultBackgroundColor);
+}
+
+.InputArea span {
+    position: absolute;
+    right: calc(0.25 * var(--fSize));
+    bottom: calc(0.25 * var(--fSize));
+    color: var(--DefaultBackgroundColor);
+    user-select: none;
+    font-size: calc(0.75 * var(--fSize));
+}
+
+.Button {
+    z-index: var(--BaseZIndex);
+    position: relative;
+    background-color: var(--DefaultWidgetsColor);
+    border-radius: 50ch;
+    height: var(--size);
+    padding-left: calc(0.5 * var(--size));
+    padding-right: calc(0.5 * var(--size));
+    width: fit-content;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Button span {
+    font-size: calc(var(--size) * 0.5);
+    color: var(--DefaultWidgetsTextColor);
+    user-select: none;
+    vertical-align: middle;
+}
+
+.RichButton {
+    z-index: var(--BaseZIndex);
+    position: relative;
+    background-color: var(--DefaultWidgetsColor);
+    border-radius: 50ch;
+    height: var(--size);
+    padding-left: calc(0.5 * var(--size));
+    padding-right: calc(0.5 * var(--size));
+    width: fit-content;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 5%);
+    font-size: calc(0.4 * var(--size));
+    transition-duration: 0.2s;
+    user-select: none;
+}
+
+.RichButton img {
+    width: calc(0.75 * var(--size));
+}
+
+.RichButton:hover {
+    background-color: var(--DefaultHighLightColor);
+    box-shadow: 0 0px 5px var(--DefaultHighLightColor);
+}
+
+.CheckBox {
+    position: relative;
+    color: var(--DefaultWidgetsTextColor);
+    font-size: calc(0.65 * var(--size));
+    user-select: none;
+    z-index: calc(1 + var(--BaseZIndex));
+    margin: calc(0.5 * var(--size));
+    width: fit-content;
+}
+
+.CheckBox .Checker {
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--DefaultWidgetsColor);
+    border-radius: 25%;
+    display: inline-block;
+    position: relative;
+    transition-duration: var(--TotalShortAnimationDuration);
+    vertical-align: middle;
+    line-height: var(--size);
+    cursor: pointer;
+    user-select: none;
+}
+
+.CheckBox .Checker:hover {
+    box-shadow: 0 0px 5px var(--DefaultHighLightColor);
+}
+
+.CheckBox .mark {
+    position: absolute;
+    width: calc(0.75 * var(--size));
+    height: calc(0.75 * var(--size));
+    line-height: calc(0.75 * var(--size));
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    user-select: none;
+    cursor: pointer;
+    font-size: calc(0.75 * var(--size));
+    font-weight: 900;
+    font-family: Font4CheckMark;
+    transition-duration: var(--TotalShortAnimationDuration);
+    color: var(--DefaultWidgetsTextColor);
+    animation-duration: var(--TotalShortAnimationDuration);
+}
+
+.CheckBox[data-selected="false"] .mark {
+    opacity: 0;
+}
+
+.CheckBox[data-selected="true"] .mark {
+    opacity: 1;
+}
+
+.CheckBox .CheckText {
+    vertical-align: middle;
+    user-select: none;
+}
+
+@keyframes showMark {
+    from {
+        display: block;
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes hideMark {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.Radio {
+    position: relative;
+    color: var(--DefaultWidgetsTextColor);
+    font-size: calc(0.65 * var(--size));
+    display: flex;
+    flex-direction: var(--direction);
+    user-select: none;
+    z-index: calc(1 + var(--BaseZIndex));
+}
+
+.Radio .Selection {
+    margin: calc(0.5 * var(--size));
+    width: fit-content;
+}
+
+.Radio .Selection .Selector {
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--DefaultWidgetsColor);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: var(--DefaultWidgetsColor);
+    border-width: 1px;
+    border-style: solid;
+    transition-duration: var(--TotalShortAnimationDuration);
+    vertical-align: middle;
+    line-height: var(--size);
+    cursor: pointer;
+    user-select: none;
+}
+
+.Radio .Selection .Selector:hover {
+    box-shadow: 0 0px 5px var(--DefaultHighLightColor);
+
+}
+
+.Radio .mark {
+    position: absolute;
+    width: calc(0.5 * var(--size));
+    height: calc(0.5 * var(--size));
+    background-color: var(--DefaultHighLightColor);
+    margin: auto;
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0px 5px var(--DefaultHighLightColor);
+    animation-duration: var(--TotalShortAnimationDuration);
+    animation-name: showMark;
+}
+
+.Radio [data-selected="false"] .mark {
+    opacity: 0;
+}
+
+.Radio [data-selected="true"] .mark {
+    opacity: 1;
+}
+
+.Radio span {
+    vertical-align: middle;
+    user-select: none;
+
+}
+
+.Switch {
+    position: relative;
+    color: var(--DefaultWidgetsTextColor);
+    display: flex;
+    flex-direction: row;
+    font-size: calc(0.5 * var(--size));
+    width: fit-content;
+    align-items: center;
+    user-select: none;
+    z-index: calc(1 + var(--BaseZIndex));
+}
+
+.Switch .SBox {
+    height: calc(var(--size) - 2px);
+    width: calc(1.8 * var(--size));
+    vertical-align: middle;
+    border-radius: calc(0.5 * var(--size));
+    background-color: var(--DefaultWidgetsColor);
+    margin-right: calc(0.2 * var(--size));
+    border-width: 1px;
+    border-color: var(--DefaultWidgetsColor);
+    border-style: solid;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 5%);
+    transition-duration: var(--TotalShortAnimationDuration);
+    position: relative;
+    cursor: pointer;
+}
+
+.Switch .SBox:hover {
+    box-shadow: 0 0px 5px var(--DefaultHighLightColor);
+}
+
+.Switch .SBox .Switcher {
+    width: calc(0.75 * var(--size));
+    height: calc(0.75 * var(--size));
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    transition-duration: var(--TotalLongAnimationDuration);
+}
+
+.Switch[data-switched='false'] .SBox .Switcher {
+    left: calc(0.2 * var(--size));
+    background-color: var(--DefaultPaneColor);
+}
+
+.Switch[data-switched='true'] .SBox {
+    border-color: var(--DefaultHighLightColor);
+}
+
+.Switch[data-switched='true'] .SBox .Switcher {
+    left: calc(0.8 * var(--size));
+    background-color: var(--DefaultHighLightColor);
+}
+
+
+.SBox .Switcher .Switch span {
+    vertical-align: middle;
+}
+
+.FloatBox {
+    position: absolute;
+    background-color: var(--DefaultPaneColor);
+    border-radius: var(--TotalBorderRadius);
+    transition-duration: var(--TotalLongAnimationDuration);
+    box-shadow: 0 2px 10px rgb(0 0 0 / 25%);
+    z-index: calc(6 + var(--BaseZIndex));
+}
+
+.FloatBox[data-isOpen='true'] {
+    opacity: 1;
+    height: var(--height);
+}
+
+.FloatBox[data-isOpen='false'] {
+    z-index: var(--BaseZIndex);
+    opacity: 0;
+    height: 0px;
+}
+
+.Delimiter {
+    width: 90%;
+    background-color: var(--DefaultBackgroundColor);
+    height: 1px;
+    margin: 0 auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    z-index: calc(1 + var(--BaseZIndex));
+}
+
+.Pane {
+    z-index: var(--BaseZIndex);
+    position: relative;
+    background-color: var(--DefaultPaneColor);
+    box-shadow: 0 2px 10px rgb(0 0 0 / 15%);
+    border-radius: var(--TotalBorderRadius);
+    padding: var(--TotalBorderRadius);
+    width: fit-content;
+    height: fit-content;
+}
+
+.Pane[data-isAccPane='true'] {
+    transition-duration: var(--TotalLongAnimationDuration);
+}
+
+.Accordion {
+    position: relative;
+    color: var(--DefaultWidgetsTextColor);
+    display: flex;
+    flex-direction: column;
+    width: var(--width);
+    z-index: calc(1 + var(--BaseZIndex));
+    transition-duration: var(--TotalLongAnimationDuration);
+}
+
+.Accordion .AccordionTitle {
+    position: relative;
+    height: var(--fSize);
+    margin-bottom: calc(0.5 * var(--fSize));
+    margin-top: calc(0.5 * var(--fSize));
+    user-select: none;
+}
+
+.Accordion .AccordionTitle span {
+    position: absolute;
+    font-size: var(--fSize);
+    line-height: calc(1.2 * var(--fSize));
+}
+
+.Accordion .AccordionTitle .AccControlBtn {
+    position: absolute;
+    right: 0;
+    font-size: calc(1.2 * var(--fSize));
+    line-height: calc(1.2 * var(--fSize));
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    transition-duration: var(--TotalLongAnimationDuration);
+    transform: rotate(0deg);
+}
+
+.Accordion[data-isOpen='true'] .AccordionTitle .AccControlBtn {
+    transform: rotate(45deg);
+}
+
+.Accordion[data-isOpen='false'] .AccordionTitle .AccControlBtn:hover {
+    color: var(--DefaultHighLightColor);
+
+}
+
+.Accordion[data-isOpen='true'] .AccordionTitle .AccControlBtn:hover {
+    color: red;
+
+}
+
+.Accordion .Contents {
+    position: relative;
+    transition-duration: var(--TotalLongAnimationDuration);
+    transform-origin: center top;
+}
+
+.Accordion[data-isOpen='true'] .Contents {
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+
+.Accordion[data-isOpen='false'] .Contents {
+    transform: rotateX(-90deg);
+    opacity: 0;
+    height: 0;
+}
+
+.Accordion[data-isOpen='true'] {
+    height: var(--OpenHeight);
+
+}
+
+.Accordion[data-isOpen='false'] {
+    height: var(--CloseHeight);
+
+}
+
+.innerButton {
+    font-size: var(--size);
+    user-select: none;
+    padding: calc(0.25 * var(--size));
+    transition-duration: var(--TotalShortAnimationDuration);
+    cursor: pointer;
+}
+
+.innerButton:hover {
+    background-color: var(--DefaultWidgetsColor);
+    color: var(--DefaultHighLightColor);
+}
+
+.Table {
+    width: var(--width);
+    height: fit-content;
+    background-color: var(--DefaultPaneColor);
+    color: var(--DefaultWidgetsTextColor);
+    --head-line-color: #777777;
+    --side-line-color: #444444;
+    --line-color: var(--DefaultWidgetsColor);
+}
+
+.Table .Title {
+    font-size: calc(1.25 * var(--size));
+    font-family: '黑体';
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+}
+
+.Table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.Table table tbody {
+    border: none;
+}
+
+.Table table tbody tr {
+    height: calc(2 * var(--size));
+}
+
+.Table table tr th {
+    font-size: calc(1.1 * var(--size));
+    font-weight: 500;
+    border-bottom: 2.5px solid var(--head-line-color);
+    border-left: 1px solid var(--line-color);
+}
+
+.Table table tr td {
+    border-left: 1px solid var(--line-color);
+    text-align: center;
+}
+
+.Table table tr th:first-child {
+    border-left: none;
+    border-right: 1.5px solid var(--side-line-color);
+}
+
+.Table table tr td:first-child {
+    border-left: none;
+    border-right: 1.5px solid var(--side-line-color);
+}
+
+.crumb {
+    border-radius: 50ch;
+    border: 1px solid var(--DefaultWidgetsColor);
+    padding: var(--TotalBorderRadius);
+    display: flex;
+    transition-duration: var(--TotalShortAnimationDuration);
+}
+
+.crumb:hover {
+    border-color: var(--DefaultHighLightColor);
+}
+
+.crumb span {
+    display: inline-block;
+    min-width: var(--crumb-min-width);
+    user-select: none;
+    font-size: var(--size);
+}
+
+.crumb .jumpable {
+    color: var(--DefaultWidgetsTextColor);
+    cursor: pointer;
+    transition-duration: var(--TotalShortAnimationDuration);
+}
+
+.crumb .jumpable::after {
+    content: '';
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--DefaultWidgetsTextColor);
+    -webkit-mask: url(Right.svg) no-repeat;
+    -webkit-mask-size: var(--size) var(--size);
+    mask: url(Right.svg) no-repeat;
+    mask-size: var(--size) var(--size);
+    vertical-align: middle;
+    transition-duration: var(--TotalShortAnimationDuration);
+}
+
+.crumb .jumpable:hover {
+    color: var(--DefaultHighLightColor);
+}
+
+.crumb .jumpable:hover::after {
+    background-color: var(--DefaultHighLightColor);
+}
+
+.crumb .current {
+    color: var(--DefaultBackgroundColor);
+}
+
+.Pagination {
+    position: relative;
+    z-index: calc(2 + var(--BaseZIndex));
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: var(--size);
+    margin: calc(0.5 * var(--size));
+    color: var(--DefaultWidgetsTextColor);
+}
+
+.Pagination .RichButton {
+    width: var(--size);
+    height: var(--size);
+    padding: 0;
+    margin-left: 4px;
+    margin-right: 4px;
+    border: 1px solid var(--DefaultWidgetsColor);
+}
+
+.Pagination .RichButton span {
+    display: inline-block;
+    width: var(--size);
+    text-align: center;
+    height: var(--size);
+    line-height: var(--size);
+    font-size: calc(0.5 * var(--size));
+}
+
+.Pagination .LastPage {
+    overflow: hidden;
+}
+
+.Pagination .LastPage::after {
+    content: '';
+    display: inline-block;
+    width: calc(0.6 * var(--size));
+    height: calc(0.6 * var(--size));
+    background-color: var(--DefaultWidgetsTextColor);
+    -webkit-mask: url(Left.svg) no-repeat;
+    -webkit-mask-size: calc(0.6 * var(--size));
+    mask: url(Left.svg) no-repeat;
+    mask-size: calc(0.6 * var(--size));
+    vertical-align: middle;
+    transition-duration: var(--TotalShortAnimationDuration);
+    margin: 0 auto;
+}
+
+.Pagination .NextPage::after {
+    content: '';
+    display: inline-block;
+    width: calc(0.6 * var(--size));
+    height: calc(0.6 * var(--size));
+    background-color: var(--DefaultWidgetsTextColor);
+    -webkit-mask: url(Right.svg) no-repeat;
+    -webkit-mask-size: calc(0.6 * var(--size));
+    mask: url(Right.svg) no-repeat;
+    mask-size: calc(0.6 * var(--size));
+    vertical-align: middle;
+    transition-duration: var(--TotalShortAnimationDuration);
+    margin: 0 auto;
+}
+
+.Pagination .unavl {
+    background-color: var(--DefaultPaneColor);
+    cursor: default;
+}
+
+.Pagination .unavl:hover {
+    box-shadow: none;
+}
+
+.Pagination .unavl::after {
+    background-color: var(--DefaultBackgroundColor);
+}
+
+.tag {
+    position: relative;
+    display: block;
+    border: 1px solid white;
+    border-radius: 50ch;
+    color: var(--DefaultWidgetsTextColor);
+    width: fit-content;
+    height: 12px;
+    height: var(--DefaultTagSize);
+}
+
+tag {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-radius: 50ch;
+    font-size: 16px;
+    line-height: 16px;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 15%);
+}
+
+tag[type='normal'] {
+    background-color: var(--DefaultWidgetsColor);
+}
+
+tag[type='highLight'] {
+    background-color: var(--DefaultHighLightColor);
+}
+
+tag[type='dark'] {
+    background-color: var(--DefaultBackgroundColor);
+    color: var(--DefaultPaneColor);
+}
+
+tag[type='Warn'] {
+    background-color: gold;
+}
+
+tag[type='Error'] {
+    background-color: crimson;
+    color: var(--DefaultPaneColor);
+}
+
+input[type='color'] {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+input[type='color']::-moz-color-swatch {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+input[type='date'] {
+    width: auto;
+    height: var(--TotalBorderRadius);
+    background-color: var(--DefaultWidgetsColor);
+    padding: calc(0.5 * var(--TotalBorderRadius));
+    border-radius: 50ch;
+    border: none;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 5%);
+    font-size: var(--TotalBorderRadius);
+    display: inline-block;
+    transition-duration: var(--TotalShortAnimationDuration);
+}
+
+input[type='date']:hover {
+    box-shadow: 0 0px 5px var(--DefaultHighLightColor);
+
+}
+
+input[type='date']:focus {
+    border: 1px solid var(--DefaultHighLightColor);
+    outline-style: none;
+}
+
+input[type='range'] {
+    width: auto;
+    height: var(--TotalBorderRadius);
+    box-shadow: 0 2px 10px rgb(0 0 0 / 5%);
+    border-radius: 50ch;
+    transition-duration: var(--TotalShortAnimationDuration);
+}
+
+input[type='range']:hover {
+    box-shadow: 0 0px 5px var(--DefaultHighLightColor);
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+    height: 100%;
+    background-color: var(--DefaultWidgetsColor);
+    border-radius: 50ch;
+}
+
+select {
+    width: auto;
+    height: auto;
+    border: 1px solid var(--DefaultWidgetsColor);
+    border-radius: 50ch;
+    background-color: var(--DefaultWidgetsColor);
+    font-size: var(--TotalBorderRadius);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: calc(0.5 * var(--TotalBorderRadius));
+    padding-right: calc(0.5 * var(--TotalBorderRadius));
+    transition-duration: var(--TotalShortAnimationDuration);
+}
+
+select:hover {
+    box-shadow: 0 0px 5px var(--DefaultHighLightColor);
+}
+
+select:focus {
+    border: 1px solid var(--DefaultHighLightColor);
+    outline-style: none;
+}
+
+select option {
+    background-color: var(--DefaultPaneColor);
+    border-radius: 4px;
+}
+
+.Loading {
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    display: block;
+    z-index: calc(1 + var(--BaseZIndex));
+}
+
+.Loading .CenterCircle {
+    position: absolute;
+    width: var(--cSize);
+    height: var(--cSize);
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: var(--cColor);
+    border-radius: 50%;
+    box-shadow: 0 0px calc(0.5 * var(--cSize)) var(--sColor);
+    z-index: calc(2 + var(--BaseZIndex));
+
+}
+
+.Loading .OutCircle {
+    position: absolute;
+    width: calc(4 * var(--cSize));
+    height: calc(4 * var(--cSize));
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    box-shadow: 0 0px calc(0.5 * var(--cSize)) var(--oColor);
+    background-color: var(--oColor);
+    animation: Loading 2s infinite;
+    z-index: calc(1 + var(--BaseZIndex));
+}
+
+@keyframes Loading {
+    0% {
+        width: var(--cSize);
+        height: var(--cSize);
+        opacity: 1;
+    }
+
+    25% {
+        width: calc(3 * var(--cSize));
+        height: calc(3 * var(--cSize));
+        opacity: 0.5;
+    }
+
+    100% {
+        width: calc(4 * var(--cSize));
+        height: calc(4 * var(--cSize));
+        opacity: 0;
+    }
+}
+
+.Loading .SideCircle {
+    position: absolute;
+    width: calc(3 * var(--cSize));
+    height: calc(3 * var(--cSize));
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    background-color: var(--oColor);
+    animation: LoadingS 2s infinite;
+    z-index: calc(1 + var(--BaseZIndex));
+}
+
+@keyframes LoadingS {
+    0% {
+        width: var(--cSize);
+        height: var(--cSize);
+        opacity: 1;
+    }
+
+    2% {
+        width: var(--cSize);
+        height: var(--cSize);
+        opacity: 1;
+    }
+
+    25% {
+        width: var(--cSize);
+        height: var(--cSize);
+        opacity: 1;
+    }
+
+    100% {
+        width: calc(3 * var(--cSize));
+        height: calc(3 * var(--cSize));
+        opacity: 0;
+    }
+}
+
+.Tips {
+    position: fixed;
+    background-color: var(--DefaultBackgroundColor);
+    border: 1px solid var(--DefaultWidgetsTextColor);
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    padding: calc(0.5 * var(--TotalBorderRadius));
+    border-radius: var(--TotalBorderRadius);
+    z-index: calc(8 + var(--BaseZIndex));
+    opacity: 0;
+    transition-duration: var(--TotalLongAnimationDuration);
+    left: 47px;
+    top: 694px;
+}
+
+.Tips[data-isOpen='true'] {
+    opacity: 1;
+}

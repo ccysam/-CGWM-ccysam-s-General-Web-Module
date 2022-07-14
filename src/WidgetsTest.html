@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" ; charset="utf-8">
+    <title>UI组件测试页面</title>
+    <style>
+        @import url(GeneralWidgets.css);
+        @import url(WidgetsTest.css);
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+        }
+    </style>
+    <script src="./GeneralWidgets.js"></script>
+    <script src="./GeneralFunctions.js"></script>
+</head>
+
+<body>
+    <div id="Dialog1" class="Dialog">
+        <div id="Wnd1" class="DialogWnd">
+            <div class="DlgCloseBtn" onclick="CloseDialog('Dialog1');">×</div>
+            <div id="Wnd1Contents" class="WndContents">
+            </div>
+        </div>
+    </div>
+    <span onclick="OpenDialog('Dialog1');">对话框</span><br>
+    空白输入框<br>
+    <div id="input1" class="inputBox">
+        <input type="text" placeholder="请输入文字">
+    </div>
+    图标+清除输入框<br>
+    <div id="richInput1" class="RichInput">
+        <img src="./Search@48px.png" class="Icon">
+        <input type="text" placeholder="搜索内容" oninput="Check4Btn('richInput1');">
+        <div class="ClearBtn" onclick="ClearInput('richInput1');"></div>
+    </div>
+    输入区<br>
+    <div id="inputArea1" class="InputArea" data-maxText="200">
+        <textarea wrap="virtual" onkeydown="CheckTextArea('inputArea1');"
+            onkeyup="CheckTextArea('inputArea1');"></textarea>
+        <span class="TextLimit">200</span>
+    </div>
+    简单按钮<br>
+    <div id="Button1" class="Button">
+        <span class="Title">按钮1</span>
+    </div>
+    按钮<br>
+    <div id="Button2" class="RichButton">
+        <img src="./Btn@48px.png">&nbsp;
+        <span>按钮2</span>
+    </div>
+    复选框<br>
+    <div id="check1" class="CheckBox" data-selected="false" onclick="ClickCheck('check1');">
+        <div class="Checker">
+            <div class="mark">√</div>
+        </div>
+        <span class="CheckText">复选框</span>
+    </div>
+    单选按钮<br>
+    <div id="Radio1" class="Radio" data-selection="none">
+        <div class="Selection" data-selected="false" onclick="ClickRadio('Radio1',0);">
+            <div class="Selector">
+                <div class="mark"></div>
+            </div>
+            <span>选项1</span>
+        </div>
+        <div class="Selection" data-selected="false" onclick="ClickRadio('Radio1',1);">
+            <div class="Selector">
+                <div class="mark"></div>
+            </div>
+            <span>选项2</span>
+        </div>
+    </div>
+    <div class="Pane">
+        <div id="Radio2" class="Radio" data-selection="none">
+            <div class="Selection" data-selected="false" onclick="ClickRadio('Radio2',0);">
+                <div class="Selector">
+                    <div class="mark"></div>
+                </div>
+                <span>选项1</span>
+            </div>
+            <div class="Selection" data-selected="false" onclick="ClickRadio('Radio2',1);">
+                <div class="Selector">
+                    <div class="mark"></div>
+                </div>
+                <span>选项2</span>
+            </div>
+            <div class="Selection" data-selected="false" onclick="ClickRadio('Radio2',2);">
+                <div class="Selector">
+                    <div class="mark"></div>
+                </div>
+                <span>选项3</span>
+            </div>
+            <div class="Selection" data-selected="false" onclick="ClickRadio('Radio2',3);">
+                <div class="Selector">
+                    <div class="mark"></div>
+                </div>
+                <span>选项4</span>
+            </div>
+        </div>
+    </div>
+
+    开关<br>
+    <div id="Switch1" class="Switch" data-switched="false">
+        <div class="SBox" onclick="Switch('Switch1');">
+            <div class="Switcher"></div>
+        </div>
+        <span>开关1</span>
+    </div>
+    悬浮框（滑动）<br>
+    <div id="float1Btn" class="RichButton" onmouseenter="ShowFloatBox('FloatBox1');">
+        <span>Show</span>
+    </div>
+    <div id="FloatBox1" class="FloatBox" data-type="float" data-isOpen="false">
+    </div>
+    悬浮窗（固定）<br>
+    <div id="float2Btn" class="RichButton" onclick="ShowFloatBox('FloatBox2');">
+        <span>Show</span>
+    </div>
+    <div id="FloatBox2" class="FloatBox" data-type="solid" data-isOpen="false"></div>
+    折叠面板<br>
+    <div class="Pane" style="height: 640px;" data-isAccPane="true" data-openedAcc="none">
+        <div id="Accordion1" class="Accordion" data-isOpen="false" data-AccSel="0">
+            <div class="AccordionTitle">
+                <span>折叠1</span>
+                <div class="AccControlBtn" onclick="foldAccordion('Accordion1');">+</div>
+            </div>
+            <div class="Contents">
+                <div id="innerBtn1" class="innerButton">
+                    <span>内部按钮</span>
+                </div>
+                <div class="Delimiter"></div>
+                <div class="RichButton" style="--size:24px;"><span>标准组件1</span></div>
+                <div class="Delimiter"></div>
+                <div class="RichInput" id="richInput2">
+                    <input type="text" placeholder="标准组件2">
+                </div>
+                <div class="Delimiter"></div>
+                <span style="font-size: 24px;line-height: 24px;">内部标签</span>
+            </div>
+        </div>
+        <div id="Accordion2" class="Accordion" data-isOpen="false" data-AccSel="1">
+            <div class="AccordionTitle">
+                <span>折叠2</span>
+                <div class="AccControlBtn" onclick="foldAccordion('Accordion2');">+</div>
+            </div>
+            <div class="Contents">
+                <div id="innerBtn1" class="innerButton">
+                    <span>内部按钮</span>
+                </div>
+                <div class="Delimiter"></div>
+                <div class="RichButton" style="--size:24px;"><span>标准组件1</span></div>
+                <div class="Delimiter"></div>
+                <div class="RichInput" id="richInput2">
+                    <input type="text" placeholder="标准组件2">
+                </div>
+                <div class="Delimiter"></div>
+                <span style="font-size: 24px;line-height: 24px;">内部标签</span>
+            </div>
+        </div>
+        <div id="Accordion3" class="Accordion" data-isOpen="false" data-AccSel="2">
+            <div class="AccordionTitle">
+                <span>折叠3</span>
+                <div class="AccControlBtn" onclick="foldAccordion('Accordion3');">+</div>
+            </div>
+            <div class="Contents">
+                <div id="innerBtn1" class="innerButton">
+                    <span>内部按钮</span>
+                </div>
+                <div class="Delimiter"></div>
+                <div class="RichButton" style="--size:24px;"><span>标准组件1</span></div>
+                <div class="Delimiter"></div>
+                <div class="RichInput" id="richInput2">
+                    <input type="text" placeholder="标准组件2">
+                </div>
+                <div class="Delimiter"></div>
+                <span style="font-size: 24px;line-height: 24px;">内部标签</span>
+            </div>
+        </div>
+    </div>
+    表格<br>
+    <div class="Pane">
+        <div id="table1" class="Table">
+            <span class="Title">表格标题</span>
+            <table>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>表头1</th>
+                    <th>表头2</th>
+                    <th>表头3</th>
+                    <th>表头4</th>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    面包屑<br>
+    <div class="Pane">
+        <div id="crumb1" class="crumb">
+            <span class="jumpable">一级</span>
+            <span class="jumpable">二级</span>
+            <span class="jumpable">三级</span>
+            <span class="current">当前级</span>
+        </div>
+    </div>
+    分页<br>
+    <div id="pgn1" class="Pagination" data-currentPage="1" data-maxPage="3">
+        <style onload="Pagination('pgn1');"></style>
+        <div class="LastPage RichButton"></div>
+        <div class="Page RichButton"><span>1</span></div>
+        <div class="Page RichButton"><span>2</span></div>
+        <div class="Page RichButton"><span>3</span></div>
+        <div class="NextPage RichButton"></div>
+    </div>
+    标签<br>
+    <tag type="normal" onmouseenter="ShowTip('Tip1',event);" onmouseout="HideTip('Tip1');">正常</tag>
+    <tag type="highLight">高亮</tag>
+    <tag type="dark">暗色</tag>
+    <tag type="Warn">警告</tag>
+    <tag type="Error">错误</tag>
+    <br>
+    选择器<br>
+    <input type="color">
+    <input type="date">
+    <input type="range">
+    <select>
+        <option>1</option>
+        <option>1</option>
+        <option>1</option>
+        <option>1</option>
+    </select>
+    <br>
+    加载器<br>
+    <div class="Pane">
+        <div id="Ld1" class="Loading">
+            <div class="CenterCircle"></div>
+            <div class="OutCircle"></div>
+            <div class="SideCircle"></div>
+        </div>
+    </div>
+    文字提示<br>
+    <span onmouseenter="ShowTip('Tip1',event);" onmouseout="HideTip('Tip1');">显示提示</span>
+    <div class="Tips" id="Tip1" data-isOpen="false">这是一条提示<br>:-)</div>
+</body>
+
+</html>

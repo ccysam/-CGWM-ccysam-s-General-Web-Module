@@ -1,0 +1,117 @@
+:root {
+    --hightLightColor: #66CCFF;
+    --highLightColorWithAlpha: #66ccff77;
+}
+
+.SideMenu {
+    position: fixed;
+    top: 0px;
+    bottom: 0;
+    display: block;
+}
+
+.MenuDelimiter {
+    width: 90%;
+    background-color: darkgray;
+    height: 1px;
+    margin: 0 auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.MenuLArrow {
+    width: 32px;
+    vertical-align: middle;
+    margin-left: 5%;
+    font-size: 32px;
+    font-family: 'Courier New', Courier, monospace;
+    user-select: none;
+    cursor: pointer;
+}
+
+.MenuLArrow:hover {
+    color: var(--hightLightColor);
+}
+
+.MenuRArrow {
+    vertical-align: middle;
+    font-size: 32px;
+    font-family: 'Courier New', Courier, monospace;
+    user-select: none;
+    width: 32px;
+    text-align: right;
+}
+
+.CloseMenuBtn {
+    width: 32px;
+    vertical-align: middle;
+    margin-right: 5%;
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: lighter;
+    user-select: none;
+    cursor: pointer;
+}
+
+.EmptyTitleBlock{
+    width: 32px;
+}
+
+.CloseMenuBtn:hover {
+    color: red;
+}
+
+.MenuHeader {
+    height: 56px;
+    line-height: 56px;
+    display: flex;
+}
+
+.MenuHeader .MenuTitle {
+    flex: 1;
+    text-align: center;
+    user-select: none;
+}
+
+.MenuBtn {
+    height: 48px;
+    user-select: none;
+    cursor: pointer;
+    padding-left: 5%;
+    padding-right: 5%;
+
+}
+
+.MenuBtn>* {
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 48px;
+}
+
+.MenuBtn:hover {
+    background-color: #00000012;
+}
+
+.UserMenuBar {
+    height: 64px;
+    line-height: 64px;
+}
+
+.UserMenuBar img {
+    border-radius: 100%;
+    background-color: var(--highLightColorWithAlpha);
+}
+
+.UserMenuBar span {
+    font-size: 20px;
+    font-weight: 600;
+    vertical-align: bottom;
+}
+
+.DoubleMenuBtn {
+    display: flex;
+}
+
+.DoubleMenuBtn .Text {
+    flex: 1;
+}
