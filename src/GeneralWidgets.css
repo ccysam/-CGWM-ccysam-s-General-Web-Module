@@ -122,6 +122,7 @@
     border-style: solid;
     border-color: var(--DefaultWidgetsColor);
     height: var(--h);
+    display: inline-block;
 }
 
 .RichInput:hover {
